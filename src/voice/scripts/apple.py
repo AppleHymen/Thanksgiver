@@ -3,13 +3,11 @@ import rospy
 from sensor_msgs.msg import Joy
 import os
 import threading
-from create_Phrases_Dict import phrase_Create
-phrases = phrase_Create()
-phraseCount = 0
+#from create_Phrases_Dict import phrase_Create
+#phrases = phrase_Create()
+#phraseCount = 0
 
-
-
-
+#print(os.getcwd())
 
 #global variables
 lastButtonPressed = None
@@ -24,8 +22,11 @@ def systemCalled():
 	global phraseCount
 	thingsToSay = ['"We lie best when we lie to ourselves"', '"No one ever does live happily ever after, but we leave the children to find that out for themselves"','"When all else fails, give up and go to the library"','"If you do not control your temper, your temper will control you"','"The world had teeth and it could bite you with them anytime it wanted"','"People do not get better, they just get smarter. When you get smarter you do not stop pulling the wings of flies, you just think of better reasons for doing it"','"Sometimes loving eyes do not see what they do not want to see"','"It is best to be ruthless with the past"']
 
-	if lastButtonPressed is not None and lastButtonPressed < len(phrases): # if phrase defined
-		os.system('spd-say ' + phrases[lastButtonPressed] + ' --wait') #Calls spd-say pkg from system and waits until phrase is completed
+	if lastButtonPressed is not None and lastButtonPressed < len(thingsToSay): # if phrase defined
+##		os.system('spd-say ' + phrases[lastButtonPressed] + ' --wait')
+		os.system('spd-say ' + thingsToSay[lastButtonPressed] + ' --wait')
+ #Calls spd-say pkg from system and waits until phrase is completed
+		print(thingsToSay[lastButtonPressed])
 	else:
 		# if phrase not defined
 		os.system('spd-say ' + '"Does not Compute"' + ' --wait')
@@ -51,7 +52,7 @@ def callback(joy_input):
 
 def listener():
 	rospy.init_node('voice_controller', anonymous=True)
-	rospy.Subscriber("joy", Joy,callback) # (topic, msg, function) defines func called when a msg is recieved
+	rospy.Subscriber("joy", Joy, callback) # (topic, msg, function) defines func called when a msg is recieved
 	rospy.spin() #keeps us in the function servicing callbacks
 
 if __name__ == '__main__':

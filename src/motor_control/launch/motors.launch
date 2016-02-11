@@ -1,0 +1,9 @@
+<launch>
+
+	<node pkg="motor_control" type="motor_controller.py" name="motor_controller">
+		<param name="~leftAddress" value="0x80"/>
+		<param name="~rightAddress" value="0x81"/>
+		<param name="~leftdev" value="/dev/ttyACM0"/>
+		<param name="~rightdev" value="/dev/ttyACM1"/>
+	</node>
+</launch>

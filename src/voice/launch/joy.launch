@@ -4,4 +4,7 @@
   <param name="autorepeat_rate" value="10"/>
 </node>
 
+<node pkg="voice" type="apple.py" name="apple_voice"/>
+<node pkg="motor_control" type="motor_controller.py" name="motor_controller"/>
+
 </launch>
