@@ -1,0 +1,3 @@
+[submodule "src/roboclaw_ros"]
+	path = src/roboclaw_ros
+	url = https://github.com/sonyccd/roboclaw_ros.git

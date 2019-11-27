@@ -1,0 +1,7 @@
+<launch>
+
+<node respawn="true" pkg="joy" type="joy_node" name="apple_joy">
+  <param name="autorepeat_rate" value="10"/>
+</node>
+
+</launch>
