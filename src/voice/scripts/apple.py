@@ -13,7 +13,7 @@ def systemCalled():
 	global lastButtonPressed
 	global timeoutOccurred
 
-	thingsToSay = ['"button A is pressed"', '"button B is pressed"','"Hello, Willow"']
+	thingsToSay = ['"We lie best when we lie to ourselves"', '"No one ever does live happily ever after, but we leave the children to find that out for themselves"','"When all else fails, give up and go to the library"','"If you do not control your temper, your temper will control you"','"The world had teeth and it could bite you with them anytime it wanted"','"People do not get better, they just get smarter. When you get smarter you do not stop pulling the wings of flies, you just think of better reasons for doing it"','"Sometimes loving eyes do not see what they do not want to see"','"It is best to be ruthless with the past"']
 	if lastButtonPressed is not None and lastButtonPressed < len(thingsToSay): # if phrase defined
 		os.system('spd-say ' + thingsToSay[lastButtonPressed] + ' --wait') #Calls spd-say pkg from system and waits until phrase is completed
 	else:
