@@ -1,19 +1,27 @@
 #! /usr/bin/env python
 
-phrases = {}
-FILENAME = 'aaas.txt'
 
-backToNewlines = open(FILENAME, 'r').read()
+def phrase_Create():
+
+    FILENAME = 'aaas.txt'
+
+    backToNewlines = open(FILENAME, 'r').read()
 
 
+    backToNewlines = backToNewlines.replace('\n', ' ')
+    backToNewlines = backToNewlines.replace("?",".")
+    backToNewlines = backToNewlines.replace("!",".")
+    sentences = backToNewlines.split(".")
+    sentences = [line.lstrip().rstrip() for line in sentences]
 
-backToNewlines = backToNewlines.replace('\n', ' ')
-backToNewlines = backToNewlines.replace("?",".")
-backToNewlines = backToNewlines.replace("!",".")
-sentences = backToNewlines.split(".")
-sentences = [line.lstrip().rstrip() for line in sentences]
-# phrases.update{'junk': 1,'kill': 2}
+    keyCount = 0
+    keyList = []
 
-print(sentences)
-# print(phrases)
+    for each in sentences:
+        keyList.append(keyCount)
+        keyCount = keyCount + 1
+
+    phrases = dict(zip(keyList,sentences))
+    return phrases
+    # print(phrases)
 
