@@ -25,7 +25,7 @@ def systemCalled():
 	if lastButtonPressed is not None and lastButtonPressed < len(thingsToSay): # if phrase defined
 ##		os.system('spd-say ' + phrases[lastButtonPressed] + ' --wait')
 		os.system('spd-say ' + thingsToSay[lastButtonPressed] + ' --wait')
- #Calls spd-say pkg from system and waits until phrase is completed
+#Calls spd-say pkg from system and waits until phrase is completed
 		print(thingsToSay[lastButtonPressed])
 	else:
 		# if phrase not defined
